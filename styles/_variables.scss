@@ -1,0 +1,9 @@
+@use "sass:color" as color;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik+Scribble&display=swap");
+
+$primary-color: rgb(44, 59, 59);
+$light-primary-color: color.scale($primary-color, $lightness: 8%);
+$secondary-color: rgb(65, 215, 65);
+$text-color: rgb(240, 236, 245);
+$title-font: "Rubik Scribble";
+$body-font: Inter;
