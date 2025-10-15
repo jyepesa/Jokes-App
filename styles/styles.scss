@@ -1,5 +1,6 @@
 @use "sass:color" as color;
 @use "variables" as *;
+@use "mixins" as *;
 
 * {
   margin: 0;
@@ -38,7 +39,6 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 
   &__text {
     font-family: $body-font;
@@ -47,7 +47,7 @@ button {
   }
 
   &__buttons {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -87,6 +87,16 @@ button {
       }
     }
   }
+
+  @include respond-to("tablet") {
+    margin: 2rem 0;
+    width: 100vw;
+    max-width: 900px;
+    &__buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
 }
 
 .saved-jokes {
@@ -104,6 +114,8 @@ button {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 850px;
+    min-width: 200px;
   }
 }
 
