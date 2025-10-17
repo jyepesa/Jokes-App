@@ -92,11 +92,12 @@ button:hover {
 .saved-jokes {
   margin: 1rem;
   max-width: 800px;
+  color: rgb(240, 236, 245);
 }
 .saved-jokes__title {
   font-family: "Rubik Scribble";
   color: rgb(240, 236, 245);
-  font-size: 1.65rem;
+  font-size: 2.3rem;
   margin-bottom: 1rem;
 }
 .saved-jokes__jokes {

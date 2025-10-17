@@ -16,7 +16,11 @@
       </p>
       <div class="joke__buttons">
         <button class="joke__buttons--new" id="load-joke">Load new joke</button>
-        <button class="joke__buttons--save" id="save-joke">
+        <button
+          class="joke__buttons--save"
+          id="save-joke"
+          style="display: none"
+        >
           Save joke
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -37,69 +41,8 @@
     </div>
     <div class="saved-jokes">
       <h2 class="saved-jokes__title">Saved Jokes</h2>
-      <div class="saved-jokes__jokes">
-        <div class="saved-joke">
-          <p class="saved-joke__text">
-            Where do young cows eat lunch? In the calf-ateria.
-          </p>
-          <button class="saved-joke--delete">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="saved-joke">
-          <p class="saved-joke__text">
-            Why did the Clydesdale give the pony a glass of water? Because he
-            was a little horse!
-          </p>
-          <button class="saved-joke--delete">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
-              />
-            </svg>
-          </button>
-        </div>
-        <div class="saved-joke">
-          <p class="saved-joke__text">Sore throats are a pain in the neck!</p>
-          <button class="saved-joke--delete">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-6"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m3 3 1.664 1.664M21 21l-1.5-1.5m-5.485-1.242L12 17.25 4.5 21V8.742m.164-4.078a2.15 2.15 0 0 1 1.743-1.342 48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185V19.5M4.664 4.664 19.5 19.5"
-              />
-            </svg>
-          </button>
-        </div>
+      <div class="saved-jokes__jokes" id="saved-jokes">
+        <i id="no-jokes">No jokes saved thus far</i>
       </div>
     </div>
   </body>

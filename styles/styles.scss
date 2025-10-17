@@ -102,11 +102,12 @@ button {
 .saved-jokes {
   margin: 1rem;
   max-width: 800px;
+  color: $text-color;
 
   &__title {
     font-family: $title-font;
     color: $text-color;
-    font-size: 1.65rem;
+    font-size: 2.3rem;
     margin-bottom: 1rem;
   }
 
