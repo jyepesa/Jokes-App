@@ -11,6 +11,7 @@ const jokesArray = [];
 async function displayJoke() {
   saveJokeBtn.style.display = "inline-block";
   const joke = await fetchJoke();
+  jokeText.style.fontStyle = "normal";
   jokeText.innerText = joke.joke;
   jokeText.setAttribute("data-id", joke.id);
 }
@@ -58,7 +59,7 @@ function renderSavedJoke({ joke, id }) {
 
 function renderFromStorage() {
   const earlierArr = JSON.parse(localStorage.getItem("jokes"));
-  if (earlierArr) {
+  if (earlierArr.length >= 1) {
     jokeAbsence.style.display = "none";
     earlierArr.forEach((joke) => {
       jokesArray.push(joke);
