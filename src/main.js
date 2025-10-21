@@ -77,6 +77,13 @@ function renderFromStorage() {
       renderSavedJoke(joke);
     });
   }
+  const isLightOn = localStorage.getItem("mode");
+  if (isLightOn === "light") {
+    lightSwitch.checked = true;
+  } else {
+    lightSwitch.checked = false;
+  }
+  toggleLightMode();
 }
 
 function deleteJoke(id) {
@@ -107,6 +114,7 @@ function toggleLightMode() {
 </svg>
 `;
     });
+    localStorage.setItem("mode", "light");
   } else {
     lightNodes.forEach((node) => {
       document.body.style.backgroundColor = "rgb(44, 59, 59)";
@@ -116,6 +124,7 @@ function toggleLightMode() {
 </svg>
 `;
     });
+    localStorage.setItem("mode", "dark");
   }
 }
 
