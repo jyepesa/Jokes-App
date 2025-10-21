@@ -21,12 +21,83 @@ button:hover {
   cursor: pointer;
 }
 
+.dark-mode {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.dark-mode__switch {
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  border-radius: 22px;
+}
+.dark-mode__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.dark-mode__switch input:checked + .dark-mode__slider {
+  background-color: rgb(65, 193, 65);
+}
+.dark-mode__switch input:checked + .dark-mode__slider .dark-mode__thumb {
+  transform: translateX(17px);
+}
+.dark-mode__switch input:focus + .dark-mode__slider {
+  box-shadow: 0 0 1px rgb(65, 193, 65);
+}
+.dark-mode__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(97.8978640777, 131.2721359223, 131.2721359223);
+  transition: 0.4s;
+  border-radius: 22px;
+}
+.dark-mode__thumb {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  color: rgb(97.8978640777, 131.2721359223, 131.2721359223);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+@media screen and (min-width: 600px) {
+  .dark-mode__switch {
+    width: 60px;
+    height: 34px;
+    border-radius: 34px;
+  }
+  .dark-mode__switch input:checked + .dark-mode__slider > .dark-mode__thumb {
+    transform: translateX(26px);
+  }
+  .dark-mode__slider {
+    border-radius: 34px;
+  }
+  .dark-mode__thumb {
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+  }
+}
+
 .title {
   font-family: "Rubik Scribble";
   color: rgb(65, 215, 65);
   text-align: center;
   font-size: 3rem;
   margin-top: 2.5rem;
+}
+.title.light-mode {
+  color: rgb(65, 193, 65);
 }
 
 .joke {
@@ -37,10 +108,16 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
 }
+.joke.light-mode {
+  background-color: rgb(219, 213, 227);
+}
 .joke__text {
   font-style: italic;
   font-size: 1.2rem;
   color: rgb(240, 236, 245);
+}
+.joke__text.light-mode {
+  color: rgb(44, 59, 59);
 }
 .joke__buttons {
   margin-top: 2.5rem;
@@ -56,8 +133,18 @@ button:hover {
   padding: 0.8rem;
   font-size: 1rem;
 }
+.joke__buttons button.light-mode {
+  border: 1px solid rgb(65, 193, 65);
+}
 .joke__buttons--new {
   background-color: rgb(65, 215, 65);
+}
+.joke__buttons--new.light-mode {
+  background-color: rgb(65, 193, 65);
+}
+.joke__buttons--new.light-mode:hover {
+  background-color: rgb(57.1285714286, 175.0714285714, 57.1285714286);
+  border: 1px solid rgb(57.1285714286, 175.0714285714, 57.1285714286);
 }
 .joke__buttons--new:hover {
   background-color: rgb(38.9565217391, 185.0434782609, 38.9565217391);
@@ -69,6 +156,12 @@ button:hover {
   gap: 0.6rem;
   background-color: inherit;
   color: rgb(65, 215, 65);
+}
+.joke__buttons--save.light-mode {
+  color: rgb(65, 193, 65);
+}
+.joke__buttons--save.light-mode:hover {
+  background-color: rgb(65, 193, 65);
 }
 .joke__buttons--save:hover {
   background-color: rgb(65, 215, 65);
@@ -94,11 +187,17 @@ button:hover {
   max-width: 800px;
   color: rgb(240, 236, 245);
 }
+.saved-jokes.light-mode {
+  color: rgb(44, 59, 59);
+}
 .saved-jokes__title {
   font-family: "Rubik Scribble";
   color: rgb(240, 236, 245);
   font-size: 2.3rem;
   margin-bottom: 1rem;
+}
+.saved-jokes__title.light-mode {
+  color: rgb(44, 59, 59);
 }
 .saved-jokes__jokes {
   display: flex;
@@ -116,9 +215,15 @@ button:hover {
   align-items: center;
   gap: 1rem;
 }
+.saved-joke.light-mode {
+  background-color: rgb(219, 213, 227);
+}
 .saved-joke__text {
   color: rgb(240, 236, 245);
   font-size: 1rem;
+}
+.saved-joke__text.light-mode {
+  color: rgb(44, 59, 59);
 }
 .saved-joke--delete {
   min-width: 2.5rem;

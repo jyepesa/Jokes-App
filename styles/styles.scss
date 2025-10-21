@@ -24,12 +24,92 @@ button {
   }
 }
 
+.dark-mode {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  &__switch {
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+    border-radius: 22px;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+
+      &:checked {
+        & + .dark-mode__slider {
+          background-color: $light-secondary-color;
+          .dark-mode__thumb {
+            transform: translateX(17px);
+          }
+        }
+      }
+
+      &:focus + .dark-mode__slider {
+        box-shadow: 0 0 1px $light-secondary-color;
+      }
+    }
+  }
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color.scale($light-primary-color, $lightness: 25%);
+    transition: 0.4s;
+    border-radius: 22px;
+  }
+  &__thumb {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    color: color.scale($light-primary-color, $lightness: 25%);
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  @include respond-to("tablet") {
+    &__switch {
+      width: 60px;
+      height: 34px;
+      border-radius: 34px;
+
+      input:checked + .dark-mode__slider > .dark-mode__thumb {
+        transform: translateX(26px);
+      }
+    }
+
+    &__slider {
+      border-radius: 34px;
+    }
+
+    &__thumb {
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+    }
+  }
+}
+
 .title {
   font-family: $title-font;
   color: $secondary-color;
   text-align: center;
   font-size: 3rem;
   margin-top: 2.5rem;
+  &.light-mode {
+    color: $light-secondary-color;
+  }
 }
 
 .joke {
@@ -39,11 +119,16 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  &.light-mode {
+    background-color: $light-mode-background;
+  }
   &__text {
     font-style: italic;
     font-size: 1.2rem;
     color: $text-color;
+    &.light-mode {
+      color: $primary-color;
+    }
   }
 
   &__buttons {
@@ -59,23 +144,41 @@ button {
       border-radius: 3px;
       padding: 0.8rem;
       font-size: 1rem;
+      &.light-mode {
+        border: 1px solid $light-secondary-color;
+      }
     }
 
     &--new {
       background-color: $secondary-color;
-
+      &.light-mode {
+        background-color: $light-secondary-color;
+        &:hover {
+          background-color: color.scale(
+            $light-secondary-color,
+            $lightness: -10%
+          );
+          border: 1px solid
+            color.scale($light-secondary-color, $lightness: -10%);
+        }
+      }
       &:hover {
         background-color: color.scale($secondary-color, $lightness: -20%);
         border: 1px solid color.scale($secondary-color, $lightness: -20%);
       }
     }
-
     &--save {
       display: flex;
       justify-content: center;
       gap: 0.6rem;
       background-color: inherit;
       color: $secondary-color;
+      &.light-mode {
+        color: $light-secondary-color;
+        &:hover {
+          background-color: $light-secondary-color;
+        }
+      }
 
       &:hover {
         background-color: $secondary-color;
@@ -103,12 +206,18 @@ button {
   margin: 1rem;
   max-width: 800px;
   color: $text-color;
+  &.light-mode {
+    color: $primary-color;
+  }
 
   &__title {
     font-family: $title-font;
     color: $text-color;
     font-size: 2.3rem;
     margin-bottom: 1rem;
+    &.light-mode {
+      color: $primary-color;
+    }
   }
 
   &__jokes {
@@ -127,10 +236,16 @@ button {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  &.light-mode {
+    background-color: $light-mode-background;
+  }
 
   &__text {
     color: $text-color;
     font-size: 1rem;
+    &.light-mode {
+      color: $primary-color;
+    }
   }
 
   &--delete {
