@@ -21,6 +21,14 @@ button:hover {
   cursor: pointer;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.italic {
+  font-style: italic;
+}
+
 .dark-mode {
   position: absolute;
   right: 1rem;
@@ -112,7 +120,6 @@ button:hover {
   background-color: rgb(219, 213, 227);
 }
 .joke__text {
-  font-style: italic;
   font-size: 1.2rem;
   color: rgb(240, 236, 245);
 }

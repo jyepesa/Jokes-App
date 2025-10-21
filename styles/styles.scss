@@ -24,6 +24,14 @@ button {
   }
 }
 
+.hidden {
+  display: none !important;
+}
+
+.italic {
+  font-style: italic;
+}
+
 .dark-mode {
   position: absolute;
   right: 1rem;
@@ -123,7 +131,6 @@ button {
     background-color: $light-mode-background;
   }
   &__text {
-    font-style: italic;
     font-size: 1.2rem;
     color: $text-color;
     &.light-mode {

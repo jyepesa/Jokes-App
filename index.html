@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="output/styles.css" />
+    <link rel="stylesheet" href="styles/styles.scss" />
     <title>Jokes App</title>
     <script type="module" src="/src/main.js" defer></script>
   </head>
@@ -34,7 +34,7 @@
     </div>
     <h1 class="title" data-light="yes">Jokes App!</h1>
     <div class="joke" data-light="yes">
-      <p class="joke__text" id="joke-text" data-light="yes">
+      <p class="joke__text italic" id="joke-text" data-light="yes">
         Click on the button to read a funny joke!
       </p>
       <div class="joke__buttons">
@@ -42,9 +42,8 @@
           Load new joke
         </button>
         <button
-          class="joke__buttons--save"
+          class="joke__buttons--save hidden"
           id="save-joke"
-          style="display: none"
           data-light="yes"
         >
           Save joke
@@ -68,7 +67,7 @@
     <div class="saved-jokes" data-light="yes">
       <h2 class="saved-jokes__title" data-light="yes">Saved Jokes</h2>
       <div class="saved-jokes__jokes" id="saved-jokes">
-        <i id="no-jokes">No jokes saved thus far</i>
+        <p id="no-jokes" class="italic">No jokes saved thus far</p>
       </div>
     </div>
   </body>
